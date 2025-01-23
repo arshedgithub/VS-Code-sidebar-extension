@@ -1,0 +1,47 @@
+{
+    "name": "my-vscode-extension",
+    "displayName": "My VS Code Extension",
+    "description": "A basic VS Code extension with a left sidebar.",
+    "version": "0.0.1",
+    "publisher": "your-publisher-name",
+    "engines": {
+        "vscode": "^1.75.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onView:mySidebar"
+    ],
+    "main": "./src/extension.js",
+    "contributes": {
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "mySidebar",
+                    "title": "My Sidebar",
+                    "icon": "images/icon.svg"
+                }
+            ]
+        },
+        "views": {
+            "mySidebar": [
+                {
+                    "id": "myView",
+                    "name": "My View"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "package": "vsce package"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "vscode": "^1.1.37"
+    }
+}
