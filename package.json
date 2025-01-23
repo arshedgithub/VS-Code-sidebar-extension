@@ -3,7 +3,7 @@
     "displayName": "My VS Code Extension",
     "description": "A basic VS Code extension with a left sidebar.",
     "version": "0.0.1",
-    "publisher": "your-publisher-name",
+    "publisher": "arshed",
     "engines": {
         "vscode": "^1.75.0"
     },
@@ -11,9 +11,9 @@
         "Other"
     ],
     "activationEvents": [
-        "onView:mySidebar"
+        "onView:myView"
     ],
-    "main": "./src/extension.js",
+    "main": "./out/extension.js",
     "contributes": {
         "viewsContainers": {
             "activitybar": [
