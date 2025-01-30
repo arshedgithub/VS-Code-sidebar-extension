@@ -1,7 +1,7 @@
 {
     "name": "my-vscode-extension",
     "displayName": "My VS Code Extension",
-    "description": "A basic VS Code extension with a Webview.",
+    "description": "A basic VS Code extension with a Webview in the sidebar.",
     "version": "0.0.1",
     "publisher": "arshed",
     "engines": {
@@ -10,19 +10,37 @@
     "categories": [
         "Other"
     ],
-    "activationEvents": [
-        "*"
-    ],
     "main": "./out/extension.js",
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "contributes": {
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "mySidebar",
+                    "title": "My Sidebar",
+                    "icon": "images/icon.svg"
+                }
+            ]
+        },
+        "views": {
+            "mySidebar": [
+                {
+                    "type": "webview",
+                    "id": "mySidebarView",
+                    "name": "My Sidebar View"
+                }
+            ]
+        }
+    },
     "scripts": {
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
         "package": "vsce package"
     },
     "devDependencies": {
+        "@types/vscode": "^1.96.0",
         "typescript": "^5.0.0"
-    },
-    "dependencies": {
-        "vscode": "^1.1.37"
     }
 }
