@@ -1,7 +1,7 @@
 {
     "name": "my-vscode-extension",
     "displayName": "My VS Code Extension",
-    "description": "A basic VS Code extension with a left sidebar.",
+    "description": "A basic VS Code extension with a Webview.",
     "version": "0.0.1",
     "publisher": "arshed",
     "engines": {
@@ -11,28 +11,9 @@
         "Other"
     ],
     "activationEvents": [
-        "onView:myView"
+        "*"
     ],
     "main": "./out/extension.js",
-    "contributes": {
-        "viewsContainers": {
-            "activitybar": [
-                {
-                    "id": "mySidebar",
-                    "title": "My Sidebar",
-                    "icon": "images/icon.svg"
-                }
-            ]
-        },
-        "views": {
-            "mySidebar": [
-                {
-                    "id": "myView",
-                    "name": "My View"
-                }
-            ]
-        }
-    },
     "scripts": {
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
